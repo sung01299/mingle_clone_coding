@@ -11,16 +11,23 @@ class MainPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MainPage> {
+  // final List<String> imagesList = [
+  //   'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_1280.jpg',
+  //   'https://cdn.pixabay.com/photo/2016/11/18/19/00/breads-1836411_1280.jpg',
+  //   'https://cdn.pixabay.com/photo/2019/01/14/17/25/gelato-3932596_1280.jpg',
+  //   'https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561_1280.jpg',
+  // ];
+
   final List<String> imagesList = [
-    'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_1280.jpg',
-    'https://cdn.pixabay.com/photo/2016/11/18/19/00/breads-1836411_1280.jpg',
-    'https://cdn.pixabay.com/photo/2019/01/14/17/25/gelato-3932596_1280.jpg',
-    'https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561_1280.jpg',
+    'assets/images/first.jpeg',
+    'assets/images/second.jpeg',
+    'assets/images/third.jpeg',
+    'assets/images/fourth.jpeg',
   ];
 
   @override
   Widget build(BuildContext context) {
-    int currentIndex = 0;
+    int _currentIndex = 0;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey.shade100,
@@ -46,41 +53,31 @@ class _MyHomePageState extends State<MainPage> {
           children: [
             CarouselSlider(
               options: CarouselOptions(
-                autoPlay: true,
-                viewportFraction: 1,
-                height: 200,
-                onPageChanged: (index, reason) {
-                  setState(
-                    () {
-                      currentIndex = index;
-                    },
-                  );
-                },
-              ),
+                  autoPlay: true,
+                  viewportFraction: 1,
+                  height: 200,
+                  onPageChanged: (index, reason) => _currentIndex = index),
               items: imagesList
                   .map(
                     (item) => Padding(
-                      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 3.0),
+                      padding: const EdgeInsets.all(0),
                       child: Card(
                         margin: const EdgeInsets.only(
                           top: 10.0,
-                          bottom: 10.0,
+                          bottom: 20.0,
                         ),
+                        elevation: 0,
+                        shadowColor: Colors.redAccent,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
+                          borderRadius: BorderRadius.circular(10.0),
                         ),
                         child: ClipRRect(
                           borderRadius: const BorderRadius.all(
-                            Radius.circular(20.0),
+                            Radius.circular(10.0),
                           ),
-                          child: Stack(
-                            children: <Widget>[
-                              Image.network(
-                                item,
-                                fit: BoxFit.cover,
-                                width: double.infinity,
-                              ),
-                            ],
+                          child: Image.asset(
+                            item,
+                            fit: BoxFit.fill,
                           ),
                         ),
                       ),
@@ -99,14 +96,13 @@ class _MyHomePageState extends State<MainPage> {
                       vertical: 5.0, horizontal: 5.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: currentIndex == index
+                    color: _currentIndex == index
                         ? Colors.orange
                         : const Color.fromRGBO(0, 0, 0, 0.3),
                   ),
                 );
               }).toList(),
             ),
-            const SizedBox(height: 30),
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Row(

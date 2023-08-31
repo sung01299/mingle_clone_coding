@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mingle/screens/second_page.dart';
-import 'package:mingle/screens/mainPage.dart';
+import 'package:mingle/screens/main_page.dart';
 import 'package:mingle/screens/third_page.dart';
 import 'package:mingle/screens/fourth_page.dart';
 

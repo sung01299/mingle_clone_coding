@@ -7,18 +7,25 @@ class ThirdPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
+    return DefaultTabController(
       length: 4,
       child: Scaffold(
-        appBar:
-            ReusableAppBar(subtitle: "홍콩대", title: "잔디밭", lastCategory: "학생회"),
-        body: TabBarView(
+        appBar: const ReusableAppBar(
+            subtitle: "홍콩대", title: "잔디밭", lastCategory: "학생회"),
+        body: const TabBarView(
           children: [
             ContentList(),
             ContentList(),
             ContentList(),
             ContentList(),
           ],
+        ),
+        floatingActionButton: FloatingActionButton.small(
+          backgroundColor: Colors.orange,
+          child: const Icon(
+            Icons.edit_outlined,
+          ),
+          onPressed: () {},
         ),
       ),
     );

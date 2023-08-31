@@ -45,6 +45,11 @@ class FourthPage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton.small(
+        backgroundColor: Colors.orange,
+        child: const Icon(Icons.add_outlined),
+        onPressed: () {},
+      ),
     );
   }
 }
