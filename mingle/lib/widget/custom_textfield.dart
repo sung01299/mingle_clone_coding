@@ -20,15 +20,7 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
           hintText: hintText,
           border: InputBorder.none,
-          hintStyle: TextStyle(fontSize: hintTextSize)
-          // border: const OutlineInputBorder(
-          //     borderSide: BorderSide(
-          //       color: Colors.black38,
-          //     )),
-          // enabledBorder: const OutlineInputBorder(
-          //     borderSide: BorderSide(
-          //       color: Colors.black38,
-          ),
+          hintStyle: TextStyle(fontSize: hintTextSize)),
       validator: (val) {
         if (val == null || val.isEmpty) {
           return 'Enter your $hintText';

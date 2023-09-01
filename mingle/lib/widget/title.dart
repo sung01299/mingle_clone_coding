@@ -18,7 +18,6 @@ class ListTitle extends StatelessWidget {
             child: InkWell(
               onTap: () {},
               child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(title, style: const TextStyle(fontSize: 20)),
                   const SizedBox(width: 5),

@@ -11,13 +11,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MainPage> {
-  // final List<String> imagesList = [
-  //   'https://cdn.pixabay.com/photo/2020/11/01/23/22/breakfast-5705180_1280.jpg',
-  //   'https://cdn.pixabay.com/photo/2016/11/18/19/00/breads-1836411_1280.jpg',
-  //   'https://cdn.pixabay.com/photo/2019/01/14/17/25/gelato-3932596_1280.jpg',
-  //   'https://cdn.pixabay.com/photo/2017/04/04/18/07/ice-cream-2202561_1280.jpg',
-  // ];
-
   final List<String> imagesList = [
     'assets/images/first.jpeg',
     'assets/images/second.jpeg',
@@ -27,7 +20,7 @@ class _MyHomePageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    int _currentIndex = 0;
+    int currentIndex = 0;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.grey.shade100,
@@ -56,7 +49,7 @@ class _MyHomePageState extends State<MainPage> {
                   autoPlay: true,
                   viewportFraction: 1,
                   height: 200,
-                  onPageChanged: (index, reason) => _currentIndex = index),
+                  onPageChanged: (index, reason) => currentIndex = index),
               items: imagesList
                   .map(
                     (item) => Padding(
@@ -96,7 +89,7 @@ class _MyHomePageState extends State<MainPage> {
                       vertical: 5.0, horizontal: 5.0),
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: _currentIndex == index
+                    color: currentIndex == index
                         ? Colors.orange
                         : const Color.fromRGBO(0, 0, 0, 0.3),
                   ),

@@ -16,6 +16,7 @@ class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final String subtitle;
   final String lastCategory;
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -33,17 +34,19 @@ class ReusableAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(subtitle,
-                        style:
-                            const TextStyle(color: Colors.grey, fontSize: 12)),
+                    Text(
+                      subtitle,
+                      style: const TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Text(title,
-                        style:
-                            const TextStyle(color: Colors.black, fontSize: 22)),
+                    Text(
+                      title,
+                      style: const TextStyle(color: Colors.black, fontSize: 22),
+                    ),
                   ],
                 ),
               ],
